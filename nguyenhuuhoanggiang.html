@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="margin-left: 400px; margin-top: 100px;">
+        <canvas id="catCanvas" height="400px" width="500px" style="border:1px solid #000000;"></canvas>
+    </div>
+    <script>
+        let c = document.getElementById('catCanvas')
+        let ctx = c.getContext('2d')
+        ctx.fillStyle = "#C6E2FF";
+        ctx.fillRect(0, 0, 500, 400);
+        function printCat() {
+            catTail();
+            catBody();
+            catEars();
+            catEyes();
+            catFace();
+            catFeet(85);
+            catFeet(165);
+            catFeet(245);
+            catFeet(325);
+            catEyes();
+            catSclera();
+            catNose();
+            catMouth();
+
+        };
+        printCat();
+        //cat tail
+        function catTail() {
+            ctx.beginPath();
+            ctx.fillStyle = "#CC33CC";
+            ctx.moveTo(10, 60);
+            ctx.lineTo(35, 35);
+            ctx.lineTo(100, 100);
+            ctx.lineTo(82, 130);
+            ctx.lineTo(10, 60);
+            ctx.closePath();
+            ctx.fill();
+        };
+
+        //cat feet
+        function catFeet(horizontal) {
+            ctx.strokeStyle = "#CC33CC"
+            ctx.fillStyle = "#CC33CC"
+            ctx.fillRect(horizontal, 250, 50, 70)
+            ctx.strokeRect(horizontal, 250, 50, 70);
+        };
+
+        // cat body
+        function catBody() {
+            ctx.strokeStyle = "#FF3366"
+            ctx.fillStyle = "#FF3366"
+            ctx.fillRect(80, 100, 300, 150)
+            ctx.strokeRect(80, 100, 300, 150);
+        };
+
+        //cat ears
+        function catEars() {
+            ctx.beginPath();
+            ctx.fillStyle = "#FF3366";
+            ctx.moveTo(300, 20);
+            ctx.lineTo(350, 45);
+            ctx.lineTo(320, 80);
+            ctx.lineTo(300, 20);
+            ctx.closePath();
+            ctx.fill()
+            //second
+            ctx.beginPath();
+            ctx.fillStyle = "#FF3366";
+            ctx.moveTo(450, 20);
+            ctx.lineTo(440, 65);
+            ctx.lineTo(400, 45);
+            ctx.lineTo(450, 20);
+            ctx.closePath();
+            ctx.fill();
+        };
+
+        //cat face
+        function catFace() {
+            ctx.beginPath();
+            ctx.fillStyle = "#CC33CC";
+            ctx.arc(380, 100, 70, 0, Math.PI * 2, true)
+            ctx.closePath();
+            ctx.fill();
+        };
+
+        // cat eyes
+        function catEyes() {
+            //left
+            ctx.beginPath();
+            ctx.fillStyle = "#E8E8E8";
+            ctx.arc(350, 80, 15, 0, Math.PI * 2, true)
+            ctx.closePath();
+            ctx.fill();
+            // right
+            ctx.beginPath();
+            ctx.fillStyle = "#E8E8E8";
+            ctx.arc(410, 80, 15, 0, Math.PI * 2, true)
+            ctx.closePath();
+            ctx.fill();
+        };
+        function catSclera() {
+            // left sclera
+            ctx.beginPath();
+            ctx.fillStyle = "#0000FF";
+            ctx.arc(352, 80, 10, 0, Math.PI * 2, true);
+            ctx.closePath();
+            ctx.fill();
+            //right sclera
+            ctx.beginPath();
+            ctx.fillStyle = "#0000FF";
+            ctx.arc(408, 80, 10, 0, Math.PI * 2, true);
+            ctx.closePath();
+            ctx.fill();
+        };
+
+        //cat nose
+        function catNose() {
+            ctx.beginPath();
+            ctx.fillStyle = "#FF3366";
+            ctx.moveTo(380, 90);
+            ctx.lineTo(395, 125);
+            ctx.lineTo(365, 125);
+            ctx.lineTo(380, 90);
+            ctx.closePath();
+            ctx.fill();
+        };
+
+        // cat mouth
+        function catMouth() {
+            ctx.beginPath();
+            ctx.strokeStyle = "#000000"
+            ctx.lineWidth = 3
+            ctx.moveTo(355, 135);
+            ctx.bezierCurveTo(380, 155, 375, 150, 410, 135);
+            ctx.stroke();
+            ctx.closePath();
+        };
+
+    </script>
+</body>
+
+</html>
